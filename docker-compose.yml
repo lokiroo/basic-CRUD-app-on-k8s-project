@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_CONNECTION=postgres://user:password@postgres:5432/crudapp
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: crudapp
+    volumes:
+      - /e/Learning/basic-CRUD-app-on-k8s-project/postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

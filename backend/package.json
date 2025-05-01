@@ -1,0 +1,23 @@
+{
+    "name": "crud-backend",
+    "version": "1.0.0",
+    "description": "Backend API for CRUD app using Express and PostgreSQL",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js",
+      "build": "echo 'no build step'",
+      "lint": "eslint ."
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "pg": "^8.7.1",
+      "sequelize": "^6.6.5",
+      "cors": "^2.8.5"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.15",
+      "eslint": "^8.3.0"
+    }
+  }
+  
