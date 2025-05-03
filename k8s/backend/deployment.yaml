@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crud-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crud-backend
+  template:
+    metadata:
+      labels:
+        app: crud-backend
+    spec:
+      containers:
+        - name: backend
+          image: crud-backend:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DB_URL
+              value: postgres://user:password@postgres:5432/crudapp
