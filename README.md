@@ -8,3 +8,14 @@ docker run -p 8080:80 crud-frontend
 
 # start stack
 docker-compose up --build
+
+# k8s
+kubectl apply -f k8s/postgres/
+kubectl apply -f k8s/backend/
+kubectl apply -f k8s/frontend/
+
+docker build -t yourname/crud-backend:latest ./backend
+docker push yourname/crud-backend:latest
+
+docker build -t yourname/crud-frontend:latest ./frontend
+docker push yourname/crud-frontend:latest

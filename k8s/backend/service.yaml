@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: crud-backend
+spec:
+  selector:
+    app: crud-backend
+  ports:
+    - port: 3000
+      targetPort: 3000
