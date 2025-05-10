@@ -9,12 +9,12 @@ function App() {
 
   // Fetch users when the component mounts
   useEffect(() => {
-    axios.get('/users').then(res => setUsers(res.data));
+    axios.get('http://localhost:3000/users').then(res => setUsers(res.data));
   }, []); // Empty array means run once on mount
 
   // Add a new user via the API
   const addUser = async () => {
-    const res = await axios.post('/users', { name }); // Post new user
+    const res = await axios.post('http://localhost:3000/users', { name }); // Post new user
     setUsers([...users, res.data]); // Update users list
     setName(''); // Clear input field
   };
